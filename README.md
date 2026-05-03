@@ -1,109 +1,111 @@
-# Flask App — AWS ECS Deployment
+# 👨‍💻 **PROJECT BY: SAMEER-INFRA**
 
-A minimal Flask web application built for learning containerization and deployment to AWS ECS (Elastic Container Service).
+# 🚀 **FLASK + DOCKER + KUBERNETES PLATFORM**
 
-Built by **Sameer-Infra**
+### ⚡ Production-style containerized application with Kubernetes orchestration, Ingress routing, PV/PVC storage, and HPA autoscaling.
 
-![Python](https://img.shields.io/badge/Python-3.14-blue)
-![Flask](https://img.shields.io/badge/Flask-3.1.1-green)
-![Docker](https://img.shields.io/badge/Docker-Ready-2496ED)
-![AWS ECS](https://img.shields.io/badge/AWS-ECS-FF9900)
+---
 
-## Features
+## ✨ **KEY HIGHLIGHTS**
 
-- Responsive landing page with modern glassmorphism UI
-- `/health` endpoint for ECS load balancer health checks
-- Two Dockerfiles — simple and multistage (distroless)
+- ⚡ **Lightweight Flask Application**
+- 🐳 **Docker Containerized Setup**
+- ☸️ **Kubernetes Deployment (Manifests Based)**
+- 🌐 **Ingress for External Traffic Routing**
+- 💾 **Persistent Volume (PV) + PVC Storage**
+- 📈 **Horizontal Pod Autoscaler (HPA)**
+- 📦 **Cloud-Native Architecture Design**
 
-## Tech Stack
+---
 
-| Component | Technology |
-|-----------|------------|
-| Framework | Flask 3.1.1 |
-| Runtime   | Python 3.14 |
-| Container | Docker (python-slim / distroless) |
-| Deploy    | AWS ECS |
+## 🏗️ **SYSTEM ARCHITECTURE**
 
-## Project Structure
+### **Client Request**
+⬇️  
+### **Ingress Controller**
+⬇️  
+### **Kubernetes Service**
+⬇️  
+### **Flask Application Pods**
+⬇️  
+### **PV / PVC Storage Layer**
 
-```
-flask-app-ecs/
-├── app.py                 # Flask app with routes
-├── run.py                 # Entry point (host 0.0.0.0, port 80)
-├── requirements.txt       # Python dependencies
+📈 **HPA automatically scales pods based on CPU usage**
+
+---
+
+## 🛠️ **TECH STACK**
+
+| Layer         | Technology |
+|---------------|------------|
+| Application   | **Flask (Python)** |
+| Container     | **Docker** |
+| Orchestration | **Kubernetes** |
+| Networking    | **Ingress Controller** |
+| Storage       | **PV & PVC** |
+| Scaling       | **Horizontal Pod Autoscaler** |
+
+---
+
+## 📂 **PROJECT STRUCTURE**
+Flask-Docker-K8s-project/
+│
+├── app.py
+├── requirements.txt
+├── Dockerfile
+│
+├── k8s/
+│ ├── deployment.yaml
+│ ├── service.yaml
+│ ├── ingress.yaml
+│ ├── hpa.yaml
+│ ├── pv.yaml
+│ ├── pvc.yaml
+│
 ├── templates/
-│   └── index.html         # Landing page
-├── Dockerfile             # Simple single-stage build
-└── Dockerfile-multi       # Multistage build with distroless
-```
+├── static/
+└── README.md
 
-## Quick Start
+----
 
-### Run locally
-
-```bash
-pip install -r requirements.txt
-python run.py
-```
-
-App runs at **http://localhost:80**.
-
-### Run with Docker
-
-**Simple build:**
+## 🐳 **DOCKER RUN**
 
 ```bash
 docker build -t flask-app .
-docker run -p 80:80 flask-app
-```
+docker run -p 5000:5000 flask-app
+👉 Access: http://localhost:5000
 
-**Multistage build (smaller, production-grade):**
+☸️ KUBERNETES DEPLOYMENT
 
-```bash
-docker build -f Dockerfile-multi -t flask-app .
-docker run -p 80:80 flask-app
-```
+kubectl apply -f k8s/
 
-## Dockerfiles Explained
+Check status:
+kubectl get pods
+kubectl get svc
+kubectl get ingress
+kubectl get hpa
 
-### Simple (`Dockerfile`)
+🌐 INGRESS
 
-Single-stage build using `python:3.14-slim`. Straightforward — copies everything, installs dependencies, runs the app. Good for development and learning.
+External traffic is routed into the cluster using Ingress Controller for controlled access to services.
 
-### Multistage (`Dockerfile-multi`)
+💾 STORAGE (PV + PVC)
+* PV (Persistent Volume): Cluster-level storage
+* PVC (Persistent Volume Claim): Application-bound storage
+* Ensures data persistence across pod restarts
 
-Two-stage build:
-1. **Builder stage** — installs dependencies into a separate directory using `python:3.14-slim`
-2. **Final stage** — copies only the app and deps into a `distroless` image
+📈 AUTOSCALING (HPA)
 
-Benefits:
-- Smaller final image (no pip, no shell, no OS utilities)
-- Reduced attack surface — distroless images contain only the app and its runtime
-- Better layer caching — dependencies are copied before source code
+Automatically scales application pods based on CPU usage and load demand.
 
-## Endpoints
+📌 DESIGN PRINCIPLES
+* Modular Kubernetes architecture
+* Separation of compute, networking, and storage
+* Production-style deployment workflow
 
-| Route     | Method | Description                     |
-|-----------|--------|---------------------------------|
-| `/`       | GET    | Landing page                    |
-| `/health` | GET    | Health check (returns `Server is up and running`) |
-
-## Deploy to AWS ECS
-
-High-level steps to deploy this app on ECS:
-
-1. **Push image to ECR**
-   ```bash
-   aws ecr get-login-password --region <region> | docker login --username AWS --password-stdin <account-id>.dkr.ecr.<region>.amazonaws.com
-   docker tag flask-app:latest <account-id>.dkr.ecr.<region>.amazonaws.com/flask-app:latest
-   docker push <account-id>.dkr.ecr.<region>.amazonaws.com/flask-app:latest
-   ```
-
-2. **Create ECS Task Definition** — specify the ECR image, port 80, memory/CPU limits
-
-3. **Create ECS Service** — attach to a cluster, configure desired count, link to a load balancer
-
-4. **Configure ALB** — target group pointing to port 80, use `/health` as the health check path
-=======
-# Flask-Docker-K8s-project
->>>>>>> fb6210a (Initial commit)
+🔥 WHAT THIS PROJECT SHOWS
+* Docker containerization workflow
+* Kubernetes orchestration system
+* Ingress-based routing
+* Persistent storage handling
+* Auto-scaling system design
