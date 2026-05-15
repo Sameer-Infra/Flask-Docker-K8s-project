@@ -1,6 +1,6 @@
 👨‍💻 Author
 
-Sameer | DevOps Engineer (Aspiring)
+Sameer | 👨‍💻☸️ DevOps & Ai Engineer 🤖☁️ (Aspiring)
 
 GitHub: Sameer-Infra
 
