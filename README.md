@@ -1,30 +1,30 @@
-👨‍💻 Author
+ # 👨‍💻 Author
 
-Sameer | 👨‍💻☸️ DevOps & Ai Engineer 🤖☁️ (Aspiring)
+ # Sameer | 👨‍💻☸️ DevOps & Ai Engineer 🤖☁️ (Aspiring)
 
-GitHub: Sameer-Infra
+ # GitHub: Sameer-Infra
 
-Project: Flask CI/CD Pipeline using Jenkins, Docker & Kubernetes.
+ # Project: Flask CI/CD Pipeline using Jenkins, Docker & Kubernetes.
 
 
-📌 Project Overview
+# 📌 Project Overview
 This project demonstrates a real-world DevOps CI/CD pipeline that automates deployment of a Flask application using:
 
 
-. Jenkins (Automation Server)
+# . Jenkins (Automation Server)
 
-. Docker (Containerization)
+# . Docker (Containerization)
 
-. Kubernetes (Orchestration)
+# . Kubernetes (Orchestration)
 
-. Docker Hub (Image Registry)
+# . Docker Hub (Image Registry)
 
 
-👉 Goal:
+# 👉 Goal:
 Every code push automatically builds, packages, and deploys the application to a Kubernetes cluster without manual intervention.
 
 
-⚙️ CI/CD Pipeline Workflow
+# ⚙️ CI/CD Pipeline Workflow
 1️⃣ Code Push (GitHub)
 Developer code push karta hai GitHub repository me.
 
@@ -49,11 +49,11 @@ Application Service ke through expose hoti hai (LoadBalancer/NodePort).
 7️⃣ Auto Scaling (HPA)
 Kubernetes automatically traffic ke hisaab se pods scale karta hai.
 
-🛠️ Tech Stack
+# 🛠️ Tech Stack
 ToolPurposeFlaskWeb ApplicationJenkinsCI/CD AutomationDockerContainerizationKubernetesOrchestrationDocker HubImage RegistryGitHubVersion ControlkubectlCluster Management
 
 
-☸️ Kubernetes Components
+# ☸️ Kubernetes Components
 
 Deployment (App lifecycle management)
 
@@ -66,10 +66,10 @@ Ingress (External access routing)
 HPA (Auto scaling)
 
 
-📂 Project Structure
+# 📂 Project Structure
 Flask-Docker-K8s-project/│├── app.py├── requirements.txt├── Dockerfile├── Jenkinsfile│├── k8s-Deployment.yaml├── K8s-Service.yaml│└── README.md
 
-⚡ Jenkins Pipeline Stages
+# ⚡ Jenkins Pipeline Stages
 
 . Clone GitHub Repository
 
@@ -84,7 +84,7 @@ Flask-Docker-K8s-project/│├── app.py├── requirements.txt├── 
 . Verify Deployment
 
 
-🚨 Real-World Challenges Solved
+# 🚨 Real-World Challenges Solved
 
 . Jenkins ↔ Kubernetes authentication setup
 
@@ -97,7 +97,7 @@ Flask-Docker-K8s-project/│├── app.py├── requirements.txt├── 
 . Cluster deployment troubleshooting
 
 
-📚 Key Learnings
+# 📚 Key Learnings
 
 . Designing CI/CD pipelines using Jenkins
 
@@ -112,7 +112,7 @@ Flask-Docker-K8s-project/│├── app.py├── requirements.txt├── 
 . Cloud-native DevOps workflow understanding
 
 
-📈 Business Impact
+# 📈 Business Impact
 
 ⚡ Faster software delivery
 
@@ -125,7 +125,7 @@ Flask-Docker-K8s-project/│├── app.py├── requirements.txt├── 
 🚀 Production-grade DevOps workflow
 
 
-🚀 Future Enhancements
+# 🚀 Future Enhancements
 
 . Helm Chart deployment
 
@@ -141,5 +141,5 @@ Flask-Docker-K8s-project/│├── app.py├── requirements.txt├── 
 
 
 
-🏁 Conclusion
+# 🏁 Conclusion
 This project demonstrates a real-world DevOps CI/CD pipeline using Jenkins, Docker, and Kubernetes. It showcases automation, scalability, and production-grade deployment practices used in modern cloud-native environments.
