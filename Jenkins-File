@@ -1,76 +1,70 @@
-pipeline {
-    agent any
+@Library('Shared') _
 
-    environment {
-        DOCKER_IMAGE = "techwithsameer/sameer-flask-app"
-        TAG = "latest"
-    }
+pipeline {
+
+    agent any
 
     stages {
 
-        stage('Clone Repository') {
+        stage("Hello") {
             steps {
-                git branch: 'main',
-                url: 'https://github.com/Sameer-Infra/Flask-Docker-K8s-project.git'
-            }
-        }
-
-        stage('Build Docker Image') {
-            steps {
-                sh """
-                docker build -t $DOCKER_IMAGE:$TAG .
-                """
-            }
-        }
-
-        stage('Docker Hub Login') {
-            steps {
-                withCredentials([usernamePassword(
-                    credentialsId: 'dockerHubCred',
-                    usernameVariable: 'DOCKER_USER',
-                    passwordVariable: 'DOCKER_PASS'
-                )]) {
-
-                    sh """
-                    echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
-                    """
+                script {
+                    hello()
                 }
             }
         }
 
-        stage('Push Docker Image') {
+        stage("Clone") {
             steps {
-                sh """
-                docker push $DOCKER_IMAGE:$TAG
-                """
+                script {
+                    Clone(
+                        'https://github.com/Sameer-Infra/Flask-Docker-K8s-project.git',
+                        'main'
+                    )
+                }
             }
         }
 
-        stage('Deploy To Kubernetes') {
+        stage("Build") {
             steps {
-                sh """
-                kubectl apply -f k8s-Deployment.yaml
-                kubectl apply -f K8s-Service.yaml
-                """
+                script {
+                    docker_build(
+                        "notes-app",
+                        "latest",
+                        "techwithsameer"
+                    )
+                }
             }
         }
 
-        stage('Verify Deployment') {
+        stage("Push To DockerHub") {
             steps {
-                sh """
-                kubectl get pods
-                kubectl get svc
-                """
+                script {
+                    docker_push(
+                        "notes-app",
+                        "latest",
+                        "techwithsameer"
+                    )
+                }
+            }
+        }
+
+        stage("Deploy") {
+            steps {
+                script {
+                    docker_compose()
+                }
             }
         }
     }
 
     post {
         success {
-            echo 'Pipeline Executed Successfully'
+            echo "Pipeline SUCCESS 🚀"
         }
+
         failure {
-            echo 'Pipeline Failed'
+            echo "Pipeline FAILED ❌"
         }
     }
 }
