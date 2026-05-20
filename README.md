@@ -115,7 +115,17 @@ The shared library contains reusable Jenkins pipeline functions for:
 
 
 ## 🛠️ Tech Stack
-ToolPurposeFlaskWeb ApplicationJenkinsCI/CD AutomationDockerContainerizationKubernetesOrchestrationDocker HubImage RegistryGitHubVersion ControlkubectlCluster Management
+
+| Tool       | Purpose                       |
+| ---------- | ----------------------------- |
+| Flask      | Web Application               |
+| Jenkins    | CI/CD Automation              |
+| Docker     | Containerization              |
+| Kubernetes | Container Orchestration       |
+| Docker Hub | Image Registry                |
+| GitHub     | Version Control               |
+| kubectl    | Kubernetes Cluster Management |
+
 
 
 
