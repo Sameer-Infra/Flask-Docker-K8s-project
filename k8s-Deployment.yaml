@@ -16,10 +16,5 @@ spec:
       containers:
       - name: flask
         image: techwithsameer/flask-app-ecs
-        volumeMounts:
-        - name: flask-storage
-          mountPath: /app
-      volumes:
-      - name: flask-storage
-        persistentVolumeClaim:
-          claimName: flask-pvc
+        ports:
+        - containerPort: 80
