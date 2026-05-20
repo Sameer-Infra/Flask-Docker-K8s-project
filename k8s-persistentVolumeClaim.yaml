@@ -1,8 +1,8 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: nginx-pvc
-  namespace: nginx
+  name: flask-pvc
+  namespace: flask
 spec:
   accessModes:
     - ReadWriteOnce
