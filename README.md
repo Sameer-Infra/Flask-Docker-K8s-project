@@ -143,9 +143,6 @@ Ingress (External access routing)
 HPA (Auto scaling)
 
 
-# 📂 Project Structure
-Flask-Docker-K8s-project/│├── app.py├── requirements.txt├── Dockerfile├── Jenkinsfile│├── k8s-Deployment.yaml├── K8s-Service.yaml│└── README.md
-
 # ⚡ Jenkins Pipeline Stages
 
 . Clone GitHub Repository
