@@ -21,7 +21,56 @@ This project demonstrates a real-world DevOps CI/CD pipeline that automates depl
 
 
 # 👉 Goal:
-Every code push automatically builds, packages, and deploys the application to a Kubernetes cluster without manual intervention.
+Every code push automatically builds, packages, and deploys the application to a Kubernetes cluster without manual 
+intervention.
+
+# # Project Structure
+
+```text id="m5k8v2"
+Flask-Docker-K8s-project/
+│
+├── app.py
+├── requirements.txt
+├── Dockerfile
+├── Jenkinsfile
+├── README.md
+│
+├── k8s/
+│   ├── namespace.yaml
+│   ├── deployment.yaml
+│   ├── service.yaml
+│   ├── ingress.yaml
+│   ├── configmap.yaml
+│   ├── secret.yaml
+│   ├── hpa.yaml
+│   └── pvc.yaml
+│
+└── docker-compose.yml
+
+---
+
+# Jenkins Shared Library
+
+This project uses a centralized Jenkins Shared Library for reusable CI/CD pipeline functions.
+
+## Shared Library Repository
+
+https://github.com/Sameer-Infra/jenkins-shared-libraries.git
+
+## Shared Library Import
+
+```groovy id="k4v9x1"
+@Library('Shared') _
+```
+
+## Shared Library Functions Used
+
+* `hello()`
+* `Clone()`
+* `docker_build()`
+* `docker_push()`
+* `docker_compose()`
+
 
 
 # ⚙️ CI/CD Pipeline Workflow
