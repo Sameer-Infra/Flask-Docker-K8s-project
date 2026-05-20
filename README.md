@@ -153,7 +153,7 @@ HPA (Auto scaling)
 
 . Push Image to Registry
 
-. Deploy to docker 
+. Deploy to Kubernetes
 
 . Verify Deployment
 
