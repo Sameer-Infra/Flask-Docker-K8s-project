@@ -52,7 +52,7 @@ pipeline {
         stage("Deploy") {
             steps {
                 script {
-                    docker_compose()
+                    K8sDeploy()
                 }
             }
         }
