@@ -49,8 +49,49 @@ Application Service ke through expose hoti hai (LoadBalancer/NodePort).
 7️⃣ Auto Scaling (HPA)
 Kubernetes automatically traffic ke hisaab se pods scale karta hai.
 
-# 🛠️ Tech Stack
+
+# # Jenkins Shared Library
+
+This project uses a centralized Jenkins Shared Library for reusable CI/CD pipeline functions.
+
+## Shared Library Repository
+
+ # https://github.com/Sameer-Infra/jenkins-shared-libraries.git #
+
+## Shared Library Import
+
+@Library('Shared') _
+
+## Shared Library Structure
+
+Shared/
+│
+├── vars/
+│   ├── hello.groovy
+│   ├── Clone.groovy
+│   ├── docker_build.groovy
+│   ├── docker_push.groovy
+│   └── docker_compose.groovy
+│
+├── src/
+└── resources/
+```
+
+The shared library contains reusable Jenkins pipeline functions for:
+
+* GitHub Repository Cloning
+* Docker Image Build
+* DockerHub Push
+* Docker Compose Deployment
+* Common CI/CD Utilities
+
+
+
+
+## 🛠️ Tech Stack
 ToolPurposeFlaskWeb ApplicationJenkinsCI/CD AutomationDockerContainerizationKubernetesOrchestrationDocker HubImage RegistryGitHubVersion ControlkubectlCluster Management
+
+
 
 
 # ☸️ Kubernetes Components
