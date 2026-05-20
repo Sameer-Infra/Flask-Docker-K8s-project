@@ -1,10 +1,10 @@
-kind: persistentVolume
+kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: nginx-pv
-  namespace: nginx
+  name: flask-pv
+  namespace: flask
   labels:
-    app: nginx
+    app: flask
 spec:
   capacity:
     storage: 1Gi
