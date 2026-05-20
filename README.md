@@ -47,29 +47,6 @@ Flask-Docker-K8s-project/
 │
 └── docker-compose.yml
 
----
-
-# Jenkins Shared Library
-
-This project uses a centralized Jenkins Shared Library for reusable CI/CD pipeline functions.
-
-## Shared Library Repository
-
-https://github.com/Sameer-Infra/jenkins-shared-libraries.git
-
-## Shared Library Import
-
-```groovy id="k4v9x1"
-@Library('Shared') _
-```
-
-## Shared Library Functions Used
-
-* `hello()`
-* `Clone()`
-* `docker_build()`
-* `docker_push()`
-* `docker_compose()`
 
 
 
