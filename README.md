@@ -1,6 +1,6 @@
  # 👨‍💻 Author
 
- # Sameer | 👨‍💻☸️ DevOps & Ai Engineer 🤖☁️ (Aspiring)
+ # Sameer | 👨‍💻☸️ DevOps & Agentic Ai Engineer 🤖☁️ (Aspiring)
 
  # GitHub: Sameer-Infra
 
